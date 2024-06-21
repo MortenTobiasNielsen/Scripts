@@ -4,7 +4,7 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo systemctl enable ssh
 sudo systemctl start ssh
-sudo apt-get install -y software-properties-common openssh-server fail2ban 
+sudo apt-get install -y software-properties-common openssh-server fail2ban
 
 # Setting overclocking and disabling bluetooth and wifi
 echo "
