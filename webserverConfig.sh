@@ -1,7 +1,7 @@
 #!/bin/sh
 
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get update -y
+sudo apt-get upgrade -y
 sudo systemctl enable ssh
 sudo systemctl start ssh
 sudo apt-get install -y software-properties-common openssh-server fail2ban
