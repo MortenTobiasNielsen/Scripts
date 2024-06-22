@@ -26,7 +26,7 @@ dns_cloudflare_api_key = $apiKey
 sudo chmod 0400 ~/.secrets/cloudflare.ini
 
 # Create certificate
-sudo certbot certonly --dns-cloudflare --dns-cloudflare-credentials ~/.secrets/cloudflare.ini -d $domain,*.$domain --preferred-challanges dns-01
+sudo certbot certonly --dns-cloudflare --dns-cloudflare-credentials ~/.secrets/cloudflare.ini -d $domain,*.$domain --preferred-challenges dns-01
 
 # Zip up the files
 sudo zip -r lib_letsencrypt.zip /var/lib/letsencrypt/
