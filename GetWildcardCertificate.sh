@@ -12,9 +12,13 @@ read -p "Enter path to place certificate zip files. We use the current users hom
 echo 
 
 # Create cloudflare.ini file with necessary input
+if [ -d ".secrets" ]; then
+    sudo rm -r ".secrets"
+fi
+
 cd ~
 mkdir .secrets
-chmod 0700 .secrets/
+sudo chmod 0700 .secrets/
 cd .secrets/
 
 echo "
@@ -22,7 +26,7 @@ dns_cloudflare_email = $email
 dns_cloudflare_api_key = $apiKey
 " | sudo tee -a cloudflare.ini >/dev/null
 
-chmod 0400 ~/.secrets/cloudflare.ini
+sudo chmod 0400 ~/.secrets/cloudflare.ini
 
 # Create certificate
 sudo certbot certonly --dns-cloudfare --dns-cloudflare-cerdentials $home_directory/.secrets/cloudflare.ini -d $domain,*.$domain --preferred-challanges dns-01
