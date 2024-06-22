@@ -36,7 +36,7 @@ sudo zip -r lib_letsencrypt.zip /var/lib/letsencrypt/
 sudo zip -r etc_letsencrypt.zip /etc/letsencrypt/
 
 # Move the files to the provided path
-mv lib_letsencrypt.zip $home_directory/$path
-mv etc_letsencrypt.zip $home_directory/$path
+mv -f lib_letsencrypt.zip $home_directory/$path
+mv -f etc_letsencrypt.zip $home_directory/$path
 
 printf "\nA certificate has been made, the files have been zipped up, and moved to $home_directory/$path"
