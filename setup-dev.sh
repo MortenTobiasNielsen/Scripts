@@ -13,16 +13,6 @@ echo "Setting up Node.js (latest from 22 branch, e.g., 22.14)..."
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs
 
-echo "Setting up .NET SDK (version 9.0)..."
-# Download and install the Microsoft package repository configuration package for Ubuntu 24.04.
-wget https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-rm packages-microsoft-prod.deb
-
-# Update package lists and install the .NET SDK.
-sudo apt update
-sudo apt install -y dotnet-sdk-9.0
-
 installCursor() {
     if ! [ -f /opt/cursor.appimage ]; then
         echo "Installing Cursor AI IDE..."
