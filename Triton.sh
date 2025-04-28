@@ -35,7 +35,7 @@ amdgpu-install_6.3.60304-1_all.deb
 sudo apt install -y ./amdgpu-install_6.3.60304-1_all.deb
 
 ## 4.2 Install ROCm components (HIP, libraries, DKMS)
-sudo amdgpu-install --usecase=rocm,hiplibsdk,dkms --rocmrelease=6.3.4
+sudo amdgpu-install -y --usecase=rocm,hiplibsdk,dkms --rocmrelease=6.3.4
 
 ## 4.3 Add user to render & video groups for AMD access
 sudo usermod -aG render,video $USER
